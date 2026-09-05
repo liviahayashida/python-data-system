@@ -1,15 +1,15 @@
 # python-data-system
-📊 Dashboard de Salários em Dados
+Dashboard de Salários em Dados
 
 Dashboard interativo desenvolvido com Python, Streamlit, Pandas e Plotly para análise de salários na área de Dados.
 Permite explorar os dados por meio de filtros dinâmicos e visualizações interativas.
-🚀 Stack
+Stack
 Python
 Streamlit
 Pandas
 Plotly
 
-📈 Funcionalidades
+Funcionalidades
 
 Filtros por ano, senioridade, contrato e tamanho da empresa
 Métricas automáticas (média, máximo, total e cargo mais frequente)
@@ -19,7 +19,7 @@ Distribuição salarial
 Proporção de tipos de trabalho
 Mapa salarial por país
 
-▶️ Execução
+Execução
 
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
 cd nome-do-repositorio

@@ -1,18 +1,18 @@
-import streamlit as st
+import streamlit as st #responsável pela interface
 import pandas as pd
-import plotly.express as px
+import plotly.express as px #gráficos
 
-# Configurações iniciais das páginas (icones, layout, etc)
+# Configurações iniciais das páginas
 st.set_page_config(
     page_title="Dashboard de Salários na Área de Dados",
     page_icon="logo.png",
-    layout="wide", #usa toda a largura da tela
+    layout="wide", #toda a largura da tela
 )
 
 # carrega os dados
 df = pd.read_csv("https://raw.githubusercontent.com/vqrca/dashboard_salarios_dados/refs/heads/main/dados-imersao-final.csv")
 
-st.sidebar.header("🔍 Filtros") #barra para filtros de pesquisa
+st.sidebar.header("Filtros") #barra para filtros de pesquisa
 
 # Filtro de Ano
 anos_disponiveis = sorted(df['ano'].unique())
@@ -30,7 +30,7 @@ contratos_selecionados = st.sidebar.multiselect("Tipo de Contrato", contratos_di
 tamanhos_disponiveis = sorted(df['tamanho_empresa'].unique())
 tamanhos_selecionados = st.sidebar.multiselect("Tamanho da Empresa", tamanhos_disponiveis, default=tamanhos_disponiveis)
 
-# O dataframe principal é filtrado de acordo com os itens que foram selecionados na barra
+#filtrado de acordo com os itens que foram selecionados na barra
 df_filtrado = df[
     (df['ano'].isin(anos_selecionados)) &
     (df['senioridade'].isin(senioridades_selecionadas)) &
@@ -39,7 +39,7 @@ df_filtrado = df[
 ]
 
 # Header do dashboard
-st.title("🎲 Dashboard de Análise de Salários na Área de Dados")
+st.title("Dashboard de Análise de Salários na Área de Dados")
 st.markdown("Explore os dados salariais na área de dados nos últimos anos. Utilize os filtros à esquerda para refinar sua análise.")
 
 # Métricas gerais
